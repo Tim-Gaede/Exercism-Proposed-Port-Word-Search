@@ -60,7 +60,7 @@ end
 println()
 
 @testset "A left-to-right word in ten line puzzle." begin
-    @test search(puzzle_main, "clojure") == ([10, 1], [10, 7])
+    @test location(puzzle_main, "clojure") == ([10, 1], [10, 7])
 end
 println()
 
@@ -102,78 +102,78 @@ end
 println()
 
 @testset "Two words written horizontally." begin
-    @test search(puzzle_main, "elixir") == ([5, 6], [5, 1])
-    @test search(puzzle_main, "clojure") == ([10, 1], [10, 7])
+    @test location(puzzle_main, "elixir") == ([5, 6], [5, 1])
+    @test location(puzzle_main, "clojure") == ([10, 1], [10, 7])
 end
 println()
 
 @testset "Words written top to bottom." begin
-    @test search(puzzle_main, "clojure") == ([10, 1], [10, 7])
-    @test search(puzzle_main, "elixir") == ([5, 6], [5, 1])
-    @test search(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
+    @test location(puzzle_main, "clojure") == ([10, 1], [10, 7])
+    @test location(puzzle_main, "elixir") == ([5, 6], [5, 1])
+    @test location(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
 end
 println()
 
 @testset "Words written bottom to top." begin
-    @test search(puzzle_main, "clojure") == ([10, 1], [10, 7])
-    @test search(puzzle_main, "elixir") == ([5, 6], [5, 1])
-    @test search(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
-    @test search(puzzle_main, "rust") == ([5, 9], [2, 9])
+    @test location(puzzle_main, "clojure") == ([10, 1], [10, 7])
+    @test location(puzzle_main, "elixir") == ([5, 6], [5, 1])
+    @test location(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
+    @test location(puzzle_main, "rust") == ([5, 9], [2, 9])
 end
 println()
 
 @testset "Words written top left to bottom right." begin
-    @test search(puzzle_main, "clojure") == ([10, 1], [10, 7])
-    @test search(puzzle_main, "elixir") == ([5, 6], [5, 1])
-    @test search(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
-    @test search(puzzle_main, "rust") == ([5, 9], [2, 9])
-    @test search(puzzle_main, "java") == ([1, 1], [4, 4])
+    @test location(puzzle_main, "clojure") == ([10, 1], [10, 7])
+    @test location(puzzle_main, "elixir") == ([5, 6], [5, 1])
+    @test location(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
+    @test location(puzzle_main, "rust") == ([5, 9], [2, 9])
+    @test location(puzzle_main, "java") == ([1, 1], [4, 4])
 end
 println()
 
 @testset "Words written bottom right to top left." begin
-    @test search(puzzle_main, "clojure") == ([10, 1], [10, 7])
-    @test search(puzzle_main, "elixir") == ([5, 6], [5, 1])
-    @test search(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
-    @test search(puzzle_main, "rust") == ([5, 9], [2, 9])
-    @test search(puzzle_main, "java") == ([1, 1], [4, 4])
-    @test search(puzzle_main, "lua") == ([9, 8], [7, 6])
+    @test location(puzzle_main, "clojure") == ([10, 1], [10, 7])
+    @test location(puzzle_main, "elixir") == ([5, 6], [5, 1])
+    @test location(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
+    @test location(puzzle_main, "rust") == ([5, 9], [2, 9])
+    @test location(puzzle_main, "java") == ([1, 1], [4, 4])
+    @test location(puzzle_main, "lua") == ([9, 8], [7, 6])
 end
 println()
 
 @testset "Words written bottom left to top right." begin
-    @test search(puzzle_main, "clojure") == ([10, 1], [10, 7])
-    @test search(puzzle_main, "elixir") == ([5, 6], [5, 1])
-    @test search(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
-    @test search(puzzle_main, "rust") == ([5, 9], [2, 9])
-    @test search(puzzle_main, "java") == ([1, 1], [4, 4])
-    @test search(puzzle_main, "lua") == ([9, 8], [7, 6])
-    @test search(puzzle_main, "lisp") == ([6, 3], [3, 6])
+    @test location(puzzle_main, "clojure") == ([10, 1], [10, 7])
+    @test location(puzzle_main, "elixir") == ([5, 6], [5, 1])
+    @test location(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
+    @test location(puzzle_main, "rust") == ([5, 9], [2, 9])
+    @test location(puzzle_main, "java") == ([1, 1], [4, 4])
+    @test location(puzzle_main, "lua") == ([9, 8], [7, 6])
+    @test location(puzzle_main, "lisp") == ([6, 3], [3, 6])
 end
 println()
 
 @testset "Words written top right to bottom left." begin
-    @test search(puzzle_main, "clojure") == ([10, 1], [10, 7])
-    @test search(puzzle_main, "elixir") == ([5, 6], [5, 1])
-    @test search(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
-    @test search(puzzle_main, "rust") == ([5, 9], [2, 9])
-    @test search(puzzle_main, "java") == ([1, 1], [4, 4])
-    @test search(puzzle_main, "lua") == ([9, 8], [7, 6])
-    @test search(puzzle_main, "lisp") == ([6, 3], [3, 6])
-    @test search(puzzle_main, "ruby") == ([6, 8], [9, 5])
+    @test location(puzzle_main, "clojure") == ([10, 1], [10, 7])
+    @test location(puzzle_main, "elixir") == ([5, 6], [5, 1])
+    @test location(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
+    @test location(puzzle_main, "rust") == ([5, 9], [2, 9])
+    @test location(puzzle_main, "java") == ([1, 1], [4, 4])
+    @test location(puzzle_main, "lua") == ([9, 8], [7, 6])
+    @test location(puzzle_main, "lisp") == ([6, 3], [3, 6])
+    @test location(puzzle_main, "ruby") == ([6, 8], [9, 5])
 end
 println()
 
 @testset "Fails to locate a word not in the puzzle." begin
-    @test search(puzzle_main, "clojure") == ([10, 1], [10, 7])
-    @test search(puzzle_main, "elixir") == ([5, 6], [5, 1])
-    @test search(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
-    @test search(puzzle_main, "rust") == ([5, 9], [2, 9])
-    @test search(puzzle_main, "java") == ([1, 1], [4, 4])
-    @test search(puzzle_main, "lua") == ([9, 8], [7, 6])
-    @test search(puzzle_main, "lisp") == ([6, 3], [3, 6])
-    @test search(puzzle_main, "ruby") == ([6, 8], [9, 5])
+    @test location(puzzle_main, "clojure") == ([10, 1], [10, 7])
+    @test location(puzzle_main, "elixir") == ([5, 6], [5, 1])
+    @test location(puzzle_main, "ecmascript") == ([1, 10], [10, 10])
+    @test location(puzzle_main, "rust") == ([5, 9], [2, 9])
+    @test location(puzzle_main, "java") == ([1, 1], [4, 4])
+    @test location(puzzle_main, "lua") == ([9, 8], [7, 6])
+    @test location(puzzle_main, "lisp") == ([6, 3], [3, 6])
+    @test location(puzzle_main, "ruby") == ([6, 8], [9, 5])
 
-    @test search(puzzle_main, "haskell") == nothing
+    @test location(puzzle_main, "haskell") == nothing
 end
 println()
